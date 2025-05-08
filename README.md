@@ -280,5 +280,69 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
     - `functionLimits.m`, `f_Function.m`, `fitnessFunction.m`, `gaussian.m`
     - `geneticAlgorithm.m`, `main.m`, `plots.m`
 
+##📁 Repository Structure
+```
+📁 Repository Structure
+├── README.md # Project overview and documentation
 
+├── Assignment_1/ # First assignment: Unconstrained Optimization
+│ ├── Instructions/
+│ │ └── Εργασία1.pdf # Original assignment instructions (Greek)
+│ │
+│ ├── Matlab Code/
+│ │ └── derivativeMethod.m # Dichotomous search with derivative
+│ │ └── derivativeSelector.m # Derivative selector utility
+│ │ └── fibonacciMethod.m # Fibonacci search method
+│ │ └── functionSelector.m # Function selector utility
+│ │ └── goldenRatioMethod.m # Golden section method
+│ │ └── Task1.m # Main script: Task 1
+│ │ └── Task2.m # Main script: Task 2
+│ │ └── Task3.m # Main script: Task 3
+│ │ └── Task4.m # Main script: Task 4
+│ │
+│ └── Report_10015.pdf # Detailed report for Assignment 1
+
+├── Assignment_2/ # Second assignment: Gradient-Based Optimization
+│ ├── Instructions/
+│ │ └── Εργασία2.pdf # Original assignment instructions (Greek)
+│ │
+│ ├── Matlab Code/
+│ │ └── armijo.m # Armijo step-size rule implementation
+│ │ └── func.m # Target function definition
+│ │ └── hessianMatrix.m # Hessian matrix computation
+│ │ └── Task1_Plot.m # Task 1 plotting script
+│ │ └── Task2_ArmijoGamma.m # Task 2: Armijo gamma method
+│ │ └── Task2_ConstGamma.m # Task 2: Constant gamma method
+│ │ └── Task2_MinGamma.m # Task 2: Minimum gamma method
+│ │ └── Task3_ArmijoGamma.m # Task 3: Armijo gamma method
+│ │ └── Task3_ConstGamma.m # Task 3: Constant gamma method
+│ │ └── Task3_MinGamma.m # Task 3: Minimum gamma method
+│ │ └── Task4_ArmijoGamma_v2.m # Task 4: Armijo gamma v2 method
+│ │ └── Task4_ConstGamma.m # Task 4: Constant gamma method
+│ │ └── Task4_MinGamma.m # Task 4: Minimum gamma method
+│ │
+│ └── Assignment_2_Report.pdf # Detailed report for Assignment 2
+
+├── Assignment_3/ # Third assignment: Constrained Optimization with Projection
+│ ├── Matlab Code/
+│ │ └── projection_rect.m # Projection method for constraints
+│ │ └── third_assignment.m # Main optimization script
+│ │
+│ └── Work3.pdf # Detailed report for Assignment 3
+
+├── Project/ # Project: Genetic Algorithm for Function Approximation
+│ ├── MATLAB Files/
+│ │ └── crossover.m # Crossover operator
+│ │ └── mutation.m # Mutation operator
+│ │ └── randomSelection.m # Random selection function
+│ │ └── functionLimits.m # Function limits calculator
+│ │ └── f_Function.m # Function definition
+│ │ └── fitnessFunction.m # Fitness evaluation (MSE)
+│ │ └── gaussian.m # Gaussian function module
+│ │ └── geneticAlgorithm.m # Main genetic algorithm script
+│ │ └── main.m # Entry point script
+│ │ └── plots.m # Plotting utilities
+│ │
+│ └── Project.pdf # Project report and documentation
+```
 ---
