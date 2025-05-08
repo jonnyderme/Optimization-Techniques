@@ -326,7 +326,7 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 
 ├── Assignment_3/ # Third assignment: Constrained Optimization with Projection
 │ ├── Matlab Code/
-│ │ └── projection_rect.m # Projection method for constraints
+│ │ └── SteepestDescentProjection.m # Projection method for constraints
 │ │ └── Task1.m # Main script: Task 1
 │ │ └── Task2.m # Main script: Task 2
 │ │ └── Task3.m # Main script: Task 3
