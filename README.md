@@ -252,10 +252,33 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 
 
 ## 📂 Repository Contents
+
 - **📄 Assignment Reports**:
-  - [Assignment 1 Report](./Project_1.pdf)
-  - [Assignment 2 Report](./Project_2.pdf)
-  - [Assignment 3 Report](./Project_3.pdf)
-- **💻 Code**: MATLAB scripts for the implementation and analysis of optimization methods.
+  - [First Assignment Report](./Assignment_1_Report.pdf)
+  - [Second Assignment Report](./Assignment_2_Report.pdf)
+  - [Third Assignment Report](./Assignment_3_Report.pdf)
+  - [Project Report](./Project_Report.pdf)
+
+- **💻 Code**: MATLAB scripts for the implementation and analysis of optimization methods:
+  - **First Assignment**:
+    - `BisectionMethod.m`
+    - `goldenRatioMethod.m`
+    - `fibonacciMethod.m`
+    - `derivativeMethod.m`
+    - `Task1.m`, `Task2.m`, `Task3.m`, `Task4.m`
+    - `functionSelector.m`, `derivativeSelector.m`
+  - **Second Assignment**:
+    - `steepest_descent.m`
+    - `newton_method.m`
+    - `levenberg_marquardt.m`
+    - `main_assignment2.m`
+  - **Third Assignment**:
+    - `projection_rect.m`
+    - `third_assignment.m`
+  - **Project**:
+    - `crossover.m`, `mutation.m`, `randomSelection.m`
+    - `functionLimits.m`, `f_Function.m`, `fitnessFunction.m`, `gaussian.m`
+    - `geneticAlgorithm.m`, `main.m`, `plots.m`
+
 
 ---
