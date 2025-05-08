@@ -286,6 +286,7 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 ├── README.md # Project overview and documentation
 
 ├── Assignment_1/ # First assignment: Unconstrained Optimization
+│ │
 │ ├── Instructions/
 │ │ └── Εργασία1.pdf # Original assignment instructions (Greek)
 │ │
@@ -303,6 +304,7 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ └── Assignment_1 Report.pdf # Detailed report for Assignment 1
 
 ├── Assignment_2/ # Second assignment: Gradient-Based Optimization
+│ │
 │ ├── Instructions/
 │ │ └── Εργασία2.pdf # Original assignment instructions (Greek)
 │ │
@@ -325,6 +327,10 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ └── Assignment_2 Report.pdf # Detailed report for Assignment 2
 
 ├── Assignment_3/ # Third assignment: Constrained Optimization with Projection
+│ │
+│ ├── Instructions/
+│ │ └── Εργασία3.pdf # Original assignment instructions (Greek)
+│ │
 │ ├── Matlab Code/
 │ │ └── SteepestDescentProjection.m # Projection method for constraints
 │ │ └── Task1.m # Main script: Task 1
@@ -335,6 +341,10 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ └── Assignment_3 Report.pdf # Detailed report for Assignment 1
 
 ├── Project/ # Project: Genetic Algorithm for Function Approximation
+│ │
+│ ├── Instructions/
+│ │ └── Project.pdf # Original assignment instructions (Greek)
+│ │
 │ ├── MATLAB Files/
 │ │ └── crossover.m # Crossover operator
 │ │ └── mutation.m # Mutation operator
@@ -347,6 +357,6 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ │ └── main.m # Entry point script
 │ │ └── plots.m # Plotting utilities
 │ │
-│ └── Project.pdf # Project report and documentation
+│ └── Project Report.pdf # Project report and documentation
 ```
 ---
