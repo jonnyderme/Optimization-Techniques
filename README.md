@@ -300,7 +300,7 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ │ └── Task3.m # Main script: Task 3
 │ │ └── Task4.m # Main script: Task 4
 │ │
-│ └── Report_10015.pdf # Detailed report for Assignment 1
+│ └── Assignment_1 Report.pdf # Detailed report for Assignment 1
 
 ├── Assignment_2/ # Second assignment: Gradient-Based Optimization
 │ ├── Instructions/
@@ -321,14 +321,18 @@ The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^
 │ │ └── Task4_ConstGamma.m # Task 4: Constant gamma method
 │ │ └── Task4_MinGamma.m # Task 4: Minimum gamma method
 │ │
-│ └── Assignment_2_Report.pdf # Detailed report for Assignment 2
+
+│ └── Assignment_2 Report.pdf # Detailed report for Assignment 2
 
 ├── Assignment_3/ # Third assignment: Constrained Optimization with Projection
 │ ├── Matlab Code/
 │ │ └── projection_rect.m # Projection method for constraints
-│ │ └── third_assignment.m # Main optimization script
+│ │ └── Task1.m # Main script: Task 1
+│ │ └── Task2.m # Main script: Task 2
+│ │ └── Task3.m # Main script: Task 3
+│ │ └── Task4.m # Main script: Task 4
 │ │
-│ └── Work3.pdf # Detailed report for Assignment 3
+│ └── Assignment_3 Report.pdf # Detailed report for Assignment 1
 
 ├── Project/ # Project: Genetic Algorithm for Function Approximation
 │ ├── MATLAB Files/
