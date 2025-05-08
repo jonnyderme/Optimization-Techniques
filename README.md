@@ -22,6 +22,7 @@ This repository contains three assignments completed as part of the Optimization
 ## 📚 Table of Contents
 - [Overview](#-overview)
 - [First Assignment: Unconstrained Optimization Methods](#-first-assignment-unconstrained-optimization-methods)
+- [Second Assignment: Constrained Optimization with Gradient-Based Methods](#-second-assignment-constrained-optimization-with-gradient-based-methods)
 - [Third Assignment: Constrained Optimization with Projection Methods](#-third-assignment-constrained-optimization-with-projection-methods)
 - [Project: Genetic Algorithm for Function Approximation](#-project-genetic-algorithm-for-function-approximation)
 - [Repository Structure](#-repository-structure)
