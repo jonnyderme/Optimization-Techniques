@@ -29,24 +29,84 @@ This repository contains three assignments completed as part of the Optimization
 
 ---
 
-## 🧩 Assignment 1: Unconstrained Optimization Methods
+## 🧩 First Assignment: Unconstrained Optimization Methods
+
 ### 🎯 Goals
-- Compare and analyze the performance of the following methods:
-  - **🔎 Dichotomous Search**
-  - **📐 Golden Section Search**
-  - **🔢 Fibonacci Search**
-  - **📉 Derivative-Based Dichotomous Search**
-- Evaluate their convergence behavior for different functions and parameter settings.
+Implement and analyze four key **optimization methods** for one-dimensional functions:
+- **🔎 Dichotomous Search**
+- **📐 Golden Section Method**
+- **🔢 Fibonacci Method**
+- **📈 Dichotomous Search with Derivative**
 
-### ✨ Features
-- Application of the methods to three distinct functions.
-- Analysis of the impact of varying step sizes (`l`) and tolerances (`ε`) on convergence.
-- Visualizations of convergence patterns and computational efficiency.
+Each method is applied to three test functions over the interval [0, 3].
 
-### 🏆 Results
-- The methods provided consistent results across different functions, with faster convergence observed for larger step sizes (`l`).
-- The Golden Section and Fibonacci methods showed similar performance, with slight variations in computational steps.
-- Derivative-based methods highlighted the role of function properties in algorithmic efficiency.
+### 🧬 Methodology
+
+#### 1️⃣ Dichotomous Search
+- **Parameters:**
+  - `e`: distance from the midpoint (ε)
+  - `l`: final search interval width (λ)
+- Tested for:
+  - Fixed `l = 0.001` with varying `e` (1e-5 to 0.005)
+  - Fixed `e = 0.001` with varying `l` (0.005 to 0.1)
+
+- **Insights:**
+  - Increasing `e` leads to **more function calls** because the narrowed interval shrinks slower.
+  - Larger `l` reduces function calls as fewer iterations are needed to reach the desired interval.
+
+#### 2️⃣ Golden Section Method
+- **Parameters:**
+  - Only `l` (final interval width)
+- Tested with `l` ranging from 0.001 to 0.1.
+- Analyzed function call count and convergence across all three test functions.
+
+#### 3️⃣ Fibonacci Method
+- Similar to the Golden Section but based on Fibonacci numbers.
+- Tested with `l` from 0.005 to 0.1.
+- Explored function call efficiency vs. interval width.
+
+#### 4️⃣ Dichotomous Search with Derivative
+- Combines the dichotomous approach with derivative information.
+- Tested over the same range as above (`l` from 0.005 to 0.1).
+
+### 📊 Comparative Results
+- All methods were compared for:
+  - Number of function evaluations per method and per function.
+  - Performance trends: derivative-based dichotomous search had the **fewest function calls**, followed by Golden Section, Fibonacci, and lastly standard Dichotomous Search.
+
+| Method                              | Function Calls (Trend)                 |
+|-------------------------------------|----------------------------------------|
+| Dichotomous with Derivative         | ✅ Least calls                          |
+| Golden Section                      | Good performance                       |
+| Fibonacci Method                    | Similar to Golden Section              |
+| Standard Dichotomous Search         | ❗ Most calls                           |
+
+- Observations confirm theoretical expectations:  
+  - **Golden Section ≈ Fibonacci Method** in efficiency.
+  - **Derivative-based method** significantly outperforms others in required function calls.
+
+### 🖼️ Visuals & Plots
+- Function plots for each test function (`f1`, `f2`, `f3`)
+- Convergence plots:
+  - Function calls vs. `e` (for Dichotomous)
+  - Function calls vs. `l` (for all methods)
+  - Interval edges `[a_k, b_k]` vs. iteration index `k`
+
+- Comparative plots:
+  - All methods on the same chart to visualize relative performance.
+
+### 📄 Files
+- `Report_10015.pdf`: Full assignment report.
+- MATLAB scripts:
+    - `BisectionMethod.m`, `goldenRatioMethod.m`, `fibonacciMethod.m`, `derivativeMethod.m`
+    - `Task1.m`, `Task2.m`, `Task3.m`, `Task4.m`: Main task scripts
+    - `functionSelector.m`, `derivativeSelector.m`: Utility scripts
+
+### 🔍 Conclusions
+- Function call patterns match expectations:
+  - **Higher precision (smaller `l` or `e`) = more iterations**
+  - **Derivative-based optimization = most efficient**
+- The results provide a **clear experimental validation** of optimization method theories, especially regarding convergence speed and computational cost.
 
 ---
 
@@ -109,14 +169,8 @@ This repository contains three assignments completed as part of the Optimization
 ### 🎯 Goals
 Develop a **Genetic Algorithm (GA)** to approximate a low-complexity analytical expression for a two-variable function **f(u1, u2)**, where the exact formula is unknown but the function is continuous. The goal is to represent f using a linear combination of Gaussian functions, aiming for minimal deviation between the true and approximated values.
 
-The target approximation formula is:
-\[
-\hat{f} = A_1 G_1 + A_2 G_2 + \dots + A_{15} G_{15} + \beta
-\]
-where each \(G_i\) is a Gaussian of the form:
-\[
-G(u_1, u_2) = e^{-((u_1 - c_1)^2 / (2 \sigma_1^2) + (u_2 - c_2)^2 / (2 \sigma_2^2))}
-\]
+The target approximation formula is: f_hat = A1 * G1 + A2 * G2 + ... + A15 * G15 + beta
+where each G_i is a Gaussian of the form: G(u1, u2) = exp(-(((u1 - c1)^2) / (2 * sigma1^2) + ((u2 - c2)^2) / (2 * sigma2^2)))
 
 ### 🧬 Methodology
 - **Encoding Chromosomes:** Each chromosome represents parameters for Gaussian functions: amplitudes (A), centers (c1, c2), and standard deviations (σ1, σ2). Real numbers are used instead of bit strings.
@@ -132,10 +186,8 @@ G(u_1, u_2) = e^{-((u_1 - c_1)^2 / (2 \sigma_1^2) + (u_2 - c_2)^2 / (2 \sigma_2^
   - 60% are generated through crossover.
 
 - **Fitness Function:**
-  - Initially used **Absolute Error** but transitioned to **Mean Squared Error (MSE)** for better convergence:
-    \[
-    e_{\text{mse}} = \frac{1}{n} \sum (f(x_i) - \hat{f}(x_i))^2
-    \]
+  - Initially used **Absolute Error** but transitioned to **Mean Squared Error (MSE)** for better convergence: e_mse = (1/n) * Σ (f(x_i) - f_hat(x_i))^2
+
 
 - **Crossover Techniques:**
   - Single-point and two-point crossover were tested.
@@ -152,11 +204,7 @@ G(u_1, u_2) = e^{-((u_1 - c_1)^2 / (2 \sigma_1^2) + (u_2 - c_2)^2 / (2 \sigma_2^
   - **crossover.m, mutation.m, randomSelection.m**: GA operators.
   - **plots.m**: For visualization and convergence tracking.
 
-The **target function** used for testing was:
-\[
-f(u_1, u_2) = \sin(u_1 + u_2) \cdot \sin(u_2^2)
-\]
-with \(u_1 \in [-1, 2]\) and \(u_2 \in [-2, 1]\).
+The **target function** used for testing was: f(u1, u2) = sin(u1 + u2) * sin(u2^2)
 
 ### 📊 Results
 - Optimal performance with **15 Gaussian functions**, balancing model complexity and fit accuracy.
