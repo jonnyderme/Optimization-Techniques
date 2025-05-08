@@ -107,15 +107,100 @@ This repository contains three assignments completed as part of the Optimization
 ## 🧩 Project: Genetic Algorithm for Function Approximation
 
 ### 🎯 Goals
-Development of a **Genetic Algorithm (GA)** to approximate a low-complexity function efficiently.
+Develop a **Genetic Algorithm (GA)** to approximate a low-complexity analytical expression for a two-variable function **f(u1, u2)**, where the exact formula is unknown but the function is continuous. The goal is to represent f using a linear combination of Gaussian functions, aiming for minimal deviation between the true and approximated values.
 
-### ✨ Features
-- Implementation of core GA operators:
-    - Crossover
-    - Mutation
-    - Selection
-- Custom fitness function evaluation.
-- Visualization of convergence behavior and results.
+The target approximation formula is:
+\[
+\hat{f} = A_1 G_1 + A_2 G_2 + \dots + A_{15} G_{15} + \beta
+\]
+where each \(G_i\) is a Gaussian of the form:
+\[
+G(u_1, u_2) = e^{-((u_1 - c_1)^2 / (2 \sigma_1^2) + (u_2 - c_2)^2 / (2 \sigma_2^2))}
+\]
+
+### 🧬 Methodology
+- **Encoding Chromosomes:** Each chromosome represents parameters for Gaussian functions: amplitudes (A), centers (c1, c2), and standard deviations (σ1, σ2). Real numbers are used instead of bit strings.
+- **Parameter Ranges:**
+  - Amplitudes: A ∈ (fmin, fmax)
+  - Centers: c1, c2 ∈ (a−3, b+3) based on the function domain
+  - Standard Deviations: σ1, σ2 ∈ (0.2, 1.3)
+
+- **Initial Population:**
+  - 150 chromosomes per generation.
+  - 30% of the best solutions advance directly to the next generation.
+  - 10% of new chromosomes are random.
+  - 60% are generated through crossover.
+
+- **Fitness Function:**
+  - Initially used **Absolute Error** but transitioned to **Mean Squared Error (MSE)** for better convergence:
+    \[
+    e_{\text{mse}} = \frac{1}{n} \sum (f(x_i) - \hat{f}(x_i))^2
+    \]
+
+- **Crossover Techniques:**
+  - Single-point and two-point crossover were tested.
+  - Final method: **Averaging Genes** (child genes = mean of parent genes) for better stability.
+
+- **Mutation:**
+  - Randomly alters a gene within its allowed range.
+  - Mutation probability: 30–40%, tuned for best performance.
+
+### 🛠️ Implementation
+- Function **functionLimits.m** computes fmin/fmax to set amplitude ranges.
+- Helper functions:
+  - **f.m / fBar.m**: Original function and its Gaussian approximation.
+  - **crossover.m, mutation.m, randomSelection.m**: GA operators.
+  - **plots.m**: For visualization and convergence tracking.
+
+The **target function** used for testing was:
+\[
+f(u_1, u_2) = \sin(u_1 + u_2) \cdot \sin(u_2^2)
+\]
+with \(u_1 \in [-1, 2]\) and \(u_2 \in [-2, 1]\).
+
+### 📊 Results
+- Optimal performance with **15 Gaussian functions**, balancing model complexity and fit accuracy.
+- Convergence:
+  - Algorithm set to stop if MSE < 0.01 or after a max number of generations.
+- **Execution Time:**
+  | Max Generations | Total Time (s) |
+  |-----------------|----------------|
+  | 100            | 24             |
+  | 500            | 103            |
+  | 1000           | 220            |
+  | 2000           | 487            |
+  | 10000          | 2300           |
+
+- **Performance Observations:**
+  - Achieved a good approximation with visible alignment between original and approximated function plots.
+  - Some oscillation in fitness (MSE) was observed across generations.
+  - Occasionally, parameters (e.g., σ2) converged to identical values across Gaussians, hinting at optimization challenges.
+
+### 📄 Files
+- `Project.pdf`: Detailed project report.
+- `MATLAB Files/`:
+    - `crossover.m`: Crossover operator.
+    - `fLimits.m`: Function limit computation.
+    - `f_Function.m`: Function definition.
+    - `fitnessFunction.m`: Fitness evaluation (MSE-based).
+    - `gaussian.m`: Gaussian function.
+    - `geneticAlgorithm.m`: Full GA script.
+    - `main.m`: Driver script to execute GA.
+    - `mutation.m`: Mutation function.
+    - `plots.m`: Plotting utilities.
+    - `randomSelection.m`: Random selection operator.
+
+### 🖼️ Visual Results
+- 3D plot of original function vs. approximation.
+- Convergence plots showing error vs. generation.
+- Visual assessment confirmed that the GA provides a **reasonably accurate low-complexity analytical approximation** despite some variability across runs.
+
+### 🔍 Observations & Limitations
+- The GA achieved a **good fit** but exhibited occasional inconsistencies in convergence, likely due to the stochastic nature of evolutionary algorithms.
+- Mutation played a crucial role in maintaining diversity and avoiding local optima.
+- Some parameter duplications (e.g., identical σ2 across Gaussians) indicate potential areas for further refinement.
+
+
 
 
 ## 📂 Repository Contents
